@@ -27,10 +27,22 @@ From Software Architecture class by Dams. Gabriel, for Customer perspective `Usa
 1. **Security** : client want their data to be secure and the system to be safe.
 
 
-### 3) Architecture Type to recomment for implementing the above system
+### 3) Architecture Type to recommend for implementing the above system
+
+Looking back at the system requirement, I will recommend the **Microservices Architecture**.
+
+Since the system need to available 24/7 and it will serce million of users, thus *scalability* is an essential trait. For the former, with the help of container, the same service can be deployed many time over (horizontal scalability), making the failure of one easily replaced by another instance of that service. For the latter, horizontal scalibility similarly helps address an increase or decrease of traffic. Thus, if the system receive more request than it can handle, then it simply spawn more instance of the required service.
+
+Another major advantage of this architecture is the *ease of development*. As services are self contained, change in one service do not impact the other services. That's a crucial aspect for rapid development. This simply mean that the system can easily react to change in requirement, and thus is very flexible, which is essential for such pioner application and a startup in general. Finally and not the least, this architecture is highly testable. This attribute improve drastically the Assurance Quality of the product, and allow to discover bug quickly and swiftly patch them.
 
 
 ### 4) Context Diagram
+
+The diagram below have been made with help of [draw.io](https://app.diagrams.net/).
+
+![Context Diagram](./ressources/context_diagram.png)
+
+We identified 6 actors (client, taxi, payment system, data anlyst, administration, senior management) that will interact with the system. This diagram will help the stakeholders get on the same page as the development teams, and it is the opportunity verify that the stakeholder requirement have been meet at a higher level design.
 
 
 ### 5) Component Diagram (Ball and Socket/Lollipop variation)
